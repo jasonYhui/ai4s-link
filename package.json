@@ -1,0 +1,14 @@
+{
+  "name": "ai4s-wiki",
+  "private": false,
+  "version": "1.0.0",
+  "description": "AI for Science Wiki - 科研资源导航站",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  }
+}
