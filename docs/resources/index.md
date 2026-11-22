@@ -10,7 +10,7 @@ description: AI4S 交叉学科可用的免费科研工作台、算力、文献�
 
 ## 科研工作台
 
-- [书生·端砚 Intern InkStone](./intern-inkstone) —— 上海人工智能实验室的 AI 科研工作台，注册免费，每月赠送墨点额度
+- [书生·端砚 Intern InkStone](./intern-inkstone) —— 上海人工智能实验室的 AI 科研工作台，注册免费，每月赠送 10,000 墨点
 
 ## 算力
 
