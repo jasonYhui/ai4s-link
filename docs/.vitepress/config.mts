@@ -35,10 +35,9 @@ export default defineConfig({
     sidebar: {
       '/resources/': [
         {
-          text: '算力资源',
+          text: '算力',
           collapsed: false,
           items: [
-            { text: '国家超算互联网（CARSI）', link: '/resources/carsi-supercomputing' },
             { text: '魔搭社区免费算力', link: '/resources/modelscope-free-compute' }
           ]
         },
@@ -46,7 +45,9 @@ export default defineConfig({
           text: '文献与数据',
           collapsed: false,
           items: [
-            { text: 'CARSI 资源共享门户', link: '/resources/carsi-portal' }
+            { text: 'CARSI 资源共享门户', link: '/resources/carsi-portal' },
+            { text: 'OpenAlex 文献数据 API', link: '/resources/openalex-api' },
+            { text: 'arXiv API', link: '/resources/arxiv-api' }
           ]
         },
         {

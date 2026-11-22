@@ -27,7 +27,6 @@ curl https://open.bigmodel.cn/api/paas/v4/chat/completions \
 - GLM-4.7-Flash：输入免费、输出免费、缓存免费
 - GLM-4.6V-Flash：输入免费、输出免费、缓存免费
 - 官方写的是「免费」，未标 token 上限；实际仍有并发与频率限制，以控制台文档为准
-- 多数付费模型的缓存存储目前为限时免费
 
 ## 适合场景
 
