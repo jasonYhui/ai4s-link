@@ -35,6 +35,13 @@ export default defineConfig({
     sidebar: {
       '/resources/': [
         {
+          text: '科研工作台',
+          collapsed: false,
+          items: [
+            { text: '书生·端砚 Intern InkStone', link: '/resources/intern-inkstone' }
+          ]
+        },
+        {
           text: '算力',
           collapsed: false,
           items: [
