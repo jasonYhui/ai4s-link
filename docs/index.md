@@ -1,19 +1,23 @@
 ---
-title: 首页
-description: AI for Science 科研资源导航站
+layout: home
+
+hero:
+  name: 科研搭子
+  text: AI4S 交叉学科资源与互助问答
+  tagline: 把散落的免费算力、数据与工具收在一起，也让踩过的坑有人接住
+  actions:
+    - theme: brand
+      text: 逛资源库
+      link: /resources/
+    - theme: alt
+      text: 看问答
+      link: /qa/
+
+features:
+  - title: 资源四段式
+    details: 是什么 / 怎么用 / 免费额度 / 验证日期。每条资源都按这个格式写，让你三十秒内判断值不值得申请。
+  - title: 标了验证日期
+    details: 科研政策会变。每条都注明核实时间，过期就更新，不抄二手信息。
+  - title: 互助问答
+    details: 踩过的坑写下来，后来的人不用再踩一遍。问题没被收录就提 Issue。
 ---
-
-# AI4S Wiki
-
-> AI for Science 科研资源导航站
-
-欢迎！这是一个为科研工作者打造的资源导航平台，整理各类科研计算、数据和工具资源。
-
-## 导航
-
-- [科研资源](/resources/) - 各类科研计算和数据资源
-- [常见问题](/qa/) - 常见问题的解答
-
-## 如何贡献
-
-如果你有好的科研资源推荐，欢迎通过 GitHub 提交 Issue 或 Pull Request。
