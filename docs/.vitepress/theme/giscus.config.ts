@@ -12,7 +12,7 @@
  * 四项齐全后把 enabled 改成 true，评论框就会出现在每篇内容页底部。
  */
 export const giscusConfig = {
-  enabled: false,
+  enabled: true,
 
   /** 形如 owner/repo */
   repo: 'jasonYhui/ai4s-link',
@@ -22,7 +22,7 @@ export const giscusConfig = {
   /** Discussions 里的分类名，建议只开一个 Q&A */
   category: 'Q&A',
   /** 分类 ID，形如 DIC_kwDOV3XvwM4... （在 giscus.app 生成） */
-  categoryId: '',
+  categoryId: 'DIC_kwDOV3XvwM4DLvAk',
 
   /** 页面与 discussion 的映射方式：pathname 最省心 */
   mapping: 'pathname',
