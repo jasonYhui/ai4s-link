@@ -35,11 +35,25 @@ export default defineConfig({
     sidebar: {
       '/resources/': [
         {
-          text: '科研资源',
+          text: '算力资源',
           collapsed: false,
           items: [
-            { text: 'CARSI 超算资源', link: '/resources/carsi-supercomputing' },
-            // 后续添加更多资源页面
+            { text: '国家超算互联网（CARSI）', link: '/resources/carsi-supercomputing' },
+            { text: '魔搭社区免费算力', link: '/resources/modelscope-free-compute' }
+          ]
+        },
+        {
+          text: '文献与数据',
+          collapsed: false,
+          items: [
+            { text: 'CARSI 资源共享门户', link: '/resources/carsi-portal' }
+          ]
+        },
+        {
+          text: '模型 API',
+          collapsed: false,
+          items: [
+            { text: '智谱 GLM 免费模型', link: '/resources/zhipu-free-models' }
           ]
         }
       ],
@@ -48,7 +62,7 @@ export default defineConfig({
           text: '常见问题',
           collapsed: false,
           items: [
-            { text: '如何申请 CARSI', link: '/qa/carsi-apply' },
+            { text: 'CARSI 要不要单独申请', link: '/qa/carsi-apply' },
             // 后续添加更多问答页面
           ]
         }
