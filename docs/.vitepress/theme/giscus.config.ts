@@ -15,7 +15,7 @@ export const giscusConfig = {
   enabled: false,
 
   /** 形如 owner/repo */
-  repo: 'jasonYhui/ai4s-wiki',
+  repo: 'jasonYhui/ai4s-link',
   /** 仓库的 node_id，公开可查 */
   repoId: 'R_kgDOV3XvwA',
 

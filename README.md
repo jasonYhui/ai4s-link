@@ -25,10 +25,13 @@ npm run docs:build    # 构建到 docs/.vitepress/dist
 
 推送到 `main` 即自动构建部署到 GitHub Pages，由 `.github/workflows/deploy.yml` 驱动。
 
+站点地址：https://ai4s.link
+
 站点路径由 `docs/.vitepress/config.mts` 里的 `base` 决定：
 
 - 绑定自定义域名 `ai4s.link` 时 → `'/'`
-- 用 `jasonyhui.github.io/ai4s-wiki/` 时 → `'/ai4s-wiki/'`
+- 用 `jasonyhui.github.io/ai4s-link/` 时 → `'/ai4s-link/'`
+- 当前已绑定自定义域名 `ai4s.link` → `'/'`
 
 ## 新增一条资源
 

@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // 站点部署路径。
 // 绑定自定义域名后在根路径运行，必须是 '/'
-// （之前用 用户名.github.io/仓库名/ 时是 '/ai4s-wiki/'）
+// （之前用 用户名.github.io/仓库名/ 时是 '/ai4s-link/'）
 const base = '/'
 
 // head 里的静态资源链接不会自动带上 base，统一在这里拼，避免换域名时漏改
