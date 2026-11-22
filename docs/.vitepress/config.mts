@@ -1,13 +1,27 @@
 import { defineConfig } from 'vitepress'
 
-// 请根据你的 GitHub 仓库名修改这里
-// 假设你的仓库是：https://github.com/你的用户名/ai4s-wiki
-// 那么 base 应该是：'/ai4s-wiki/'
+// 站点部署的子路径。
+// 用 用户名.github.io/仓库名/ 时保持 '/ai4s-wiki/'；绑定自定义域名后改成 '/'
+const base = '/ai4s-wiki/'
+
+// head 里的静态资源链接不会自动带上 base，统一在这里拼，避免换域名时漏改
+const asset = (p: string) => `${base}${p}`
+
 export default defineConfig({
-  base: '/ai4s-wiki/',  // 你的仓库名，与 GitHub 仓库名一致
+  base,
   lang: 'zh-CN',
   title: 'AI4S Wiki',
   description: 'AI for Science 科研资源导航站',
+  head: [
+    ['link', { rel: 'icon', href: asset('favicon.ico'), sizes: 'any' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: asset('favicon.svg') }],
+    ['link', { rel: 'apple-touch-icon', href: asset('apple-touch-icon.png') }]
+  ],
+  sitemap: {
+    // 结尾斜杠必须保留：VitePress 把它当 base URL 解析相对路径，
+    // 少了斜杠 /ai4s-wiki 会被当成文件名，页面 URL 会掉到根目录
+    hostname: 'https://jasonyhui.github.io/ai4s-wiki/'
+  },
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },

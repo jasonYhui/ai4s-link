@@ -1,5 +1,5 @@
 ---
-title: 首页 - AI4S Wiki
+title: 首页
 description: AI for Science 科研资源导航站
 ---
 

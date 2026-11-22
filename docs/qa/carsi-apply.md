@@ -1,6 +1,6 @@
 ---
-title: 常见问题 - AI4S Wiki
-description: 科研资源相关的常见问题解答
+title: 如何申请 CARSI 超算资源
+description: 从确认机构接入到提交项目申请的完整流程
 ---
 
 # 常见问题
