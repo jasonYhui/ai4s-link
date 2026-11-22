@@ -10,8 +10,8 @@ const asset = (p: string) => `${base}${p}`
 export default defineConfig({
   base,
   lang: 'zh-CN',
-  title: 'AI4S Wiki',
-  description: 'AI for Science 科研资源导航站',
+  title: '科研搭子',
+  description: 'AI4S 交叉学科资源与互助问答',
   head: [
     ['link', { rel: 'icon', href: asset('favicon.ico'), sizes: 'any' }],
     ['link', { rel: 'icon', type: 'image/svg+xml', href: asset('favicon.svg') }],
@@ -28,6 +28,10 @@ export default defineConfig({
       { text: '资源', link: '/resources/' },
       { text: '问答', link: '/qa/' }
     ],
+    footer: {
+      message: '资源政策会变，请以官方页面为准；每条资源都标注了验证日期。',
+      copyright: '科研搭子 · ai4s.link'
+    },
     sidebar: {
       '/resources/': [
         {
