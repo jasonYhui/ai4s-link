@@ -1,8 +1,9 @@
 import { defineConfig } from 'vitepress'
 
-// 站点部署的子路径。
-// 用 用户名.github.io/仓库名/ 时保持 '/ai4s-wiki/'；绑定自定义域名后改成 '/'
-const base = '/ai4s-wiki/'
+// 站点部署路径。
+// 绑定自定义域名后站点运行在根路径，必须是 '/'
+// （之前用 用户名.github.io/仓库名/ 时是 '/ai4s-wiki/'）
+const base = '/'
 
 // head 里的静态资源链接不会自动带上 base，统一在这里拼，避免换域名时漏改
 const asset = (p: string) => `${base}${p}`
@@ -18,9 +19,9 @@ export default defineConfig({
     ['link', { rel: 'apple-touch-icon', href: asset('apple-touch-icon.png') }]
   ],
   sitemap: {
-    // 结尾斜杠必须保留：VitePress 把它当 base URL 解析相对路径，
-    // 少了斜杠 /ai4s-wiki 会被当成文件名，页面 URL 会掉到根目录
-    hostname: 'https://jasonyhui.github.io/ai4s-wiki/'
+    // 自定义域名后站点在根路径。结尾斜杠必须保留：
+    // VitePress 把 hostname 当 base URL 解析相对路径，少了斜杠页面 URL 会错
+    hostname: 'https://ai4science.wiki/'
   },
   themeConfig: {
     nav: [
