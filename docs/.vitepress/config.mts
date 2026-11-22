@@ -21,7 +21,7 @@ export default defineConfig({
   sitemap: {
     // 自定义域名后站点在根路径。结尾斜杠必须保留：
     // VitePress 把 hostname 当 base URL 解析相对路径，少了斜杠页面 URL 会错
-    hostname: 'https://ai4science.wiki/'
+    hostname: 'https://ai4s.link/'
   },
   themeConfig: {
     nav: [
