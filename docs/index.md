@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: 科研搭子 SciMate
+  name: 赛灵 SciMate
   text: AI4S 交叉学科资源与互助问答
   tagline: 把散落的免费算力、数据与工具收在一起，也让踩过的坑有人接住
   actions:

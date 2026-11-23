@@ -2,7 +2,7 @@
   "name": "ai4s-link",
   "private": false,
   "version": "1.0.0",
-  "description": "科研搭子 SciMate — AI4S 交叉学科资源与互助问答",
+  "description": "赛灵 SciMate — AI4S 交叉学科资源与互助问答",
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
