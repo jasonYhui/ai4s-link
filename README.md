@@ -1,4 +1,4 @@
-# 赛灵 SciMate
+# 赛灵社区
 
 AI4S 交叉学科资源与互助问答 · https://ai4s.link
 
