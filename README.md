@@ -35,7 +35,7 @@ npm run docs:build    # 构建到 docs/.vitepress/dist
 
 ## 为什么托管在 GitHub（2026-11-23 决定）
 
-**决定：维持 GitHub 仓库 + GitHub Actions + GitHub Pages + Giscus，不做国内托管迁移。**
+**决定：维持 GitHub 仓库 + GitHub Actions + GitHub Pages，不做国内托管迁移；讨论放 GitHub Discussions，站内只做入口跳转。**
 
 理由：
 
@@ -46,7 +46,7 @@ npm run docs:build    # 构建到 docs/.vitepress/dist
 已知代价（接受）：
 
 - **国内访问不稳定**：`ai4s.link` 与 `github.io` 都解析到 GitHub 的 `185.199.x.x`，国内直连实测可达 17 秒、偶发连接重置
-- **评论区门槛**：Giscus 依赖 GitHub Discussions，访客需要有 GitHub 账号
+- **讨论门槛**：讨论在 GitHub Discussions 进行，访客需要有 GitHub 账号
 
 如果将来流量大到必须解决国内访问，路径是：ICP 备案（1–4 周）→ 阿里云 OSS/COS + CDN → 评论换 Twikoo。注意两点：
 
@@ -59,23 +59,25 @@ npm run docs:build    # 构建到 docs/.vitepress/dist
 
 在 `docs/resources/` 下建 `资源名.md`，按四段式写，然后在 `config.mts` 的 sidebar 里登记一条。
 
-## 评论区（Giscus）
+## 讨论入口（站外）
 
-评论组件已写好，挂在每篇内容页底部（首页除外）。要启用还需三步人工操作：
+站内**不承载任何评论内容**，只在每篇内容页底部放一个入口卡片，点出去到 GitHub Discussions：
 
-1. 仓库 Settings → General → Features 勾选 **Discussions**
-2. 在 Discussions 里建一个 **Q&A** 分类
-3. 到 <https://giscus.app> 安装 App、填入仓库名，拿到 `categoryId`
+- 「提一个新问题」→ `discussions/new?category=q-a`
+- 「看已有讨论」→ `discussions`
+- 「报告资源过期 / 报错」→ `issues/new`
 
-然后把 `docs/.vitepress/theme/giscus.config.ts` 里的 `categoryId` 填上、`enabled` 改成 `true`。
+链接集中在 [`docs/.vitepress/theme/site-links.ts`](docs/.vitepress/theme/site-links.ts)，改地址只改这一处。
 
-`repo` 与 `repoId` 已填好（`repoId` = 仓库 node_id，公开可查）。
-配置不全时线上不会渲染任何东西，本地开发会显示一条提示。
+**为什么不在站内嵌评论（曾经用 Giscus，已移除）**：
 
-种子帖草稿见 `.github/discussions-seeds.md`。
+1. 嵌评论意味着站内承载用户生成内容（UGC），运营者要承担内容管理义务——审核机制、举报入口、日志留存，成本远高于收益
+2. 如果把站点托管到国内（备案），UGC 还会牵涉备案信息变更
+3. 站内纯静态 = 无 UGC 义务，备案和托管选择都更自由
 
-单页想关掉评论，在 frontmatter 加 `comment: false`。
+单页想关掉这个入口，在 frontmatter 加 `discuss: false`。
 
+种子帖草稿与已发布记录见 [`.github/discussions-seeds.md`](.github/discussions-seeds.md)。
 ## 贡献
 
 欢迎提交 Issue 或 Pull Request。

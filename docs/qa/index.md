@@ -5,7 +5,9 @@ description: 科研资源申请与使用中的常见问题解答
 
 # 常见问题
 
-汇总科研资源申请、使用过程中的高频问题。后续会在页面上挂接 Giscus 评论，方便直接提问与讨论。
+汇总科研资源申请、使用过程中的高频问题。
+
+没被收录的问题，请到 [GitHub Discussions](https://github.com/jasonYhui/ai4s-link/discussions) 提问——本站只放静态内容，不承载评论。
 
 ## 资源申请
 
