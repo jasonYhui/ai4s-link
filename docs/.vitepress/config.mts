@@ -25,9 +25,14 @@ export default defineConfig({
   },
   themeConfig: {
     nav: [
-      { text: '首页', link: '/' },
-      { text: '资源', link: '/resources/' },
-      { text: '问答', link: '/qa/' }
+      { text: '科研资源', link: '/resources/' },
+      {
+        text: '交叉论坛',
+        link: 'https://github.com/jasonYhui/ai4s-link/discussions',
+        target: '_blank',
+        rel: 'noopener noreferrer'
+      },
+      { text: '学术招聘', link: '/jobs/' }
     ],
     footer: {
       message: '资源政策会变，请以官方页面为准；每条资源都标注了验证日期。',
@@ -73,6 +78,15 @@ export default defineConfig({
           items: [
             { text: 'CARSI 要不要单独申请', link: '/qa/carsi-apply' },
             // 后续添加更多问答页面
+          ]
+        }
+      ],
+      '/jobs/': [
+        {
+          text: '学术招聘',
+          collapsed: false,
+          items: [
+            { text: '招聘信息', link: '/jobs/' }
           ]
         }
       ]
