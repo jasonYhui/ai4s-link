@@ -1,5 +1,17 @@
 # Discussions 种子帖（冷启动用）
 
+> **状态：已于 2026-11-23 全部发布，均在 Q&A 分类下。**
+>
+> | # | 标题 | 链接 |
+> |---|---|---|
+> | 1 | CARSI 直连超算互联网后，环境里默认装了哪些框架？ | https://github.com/jasonYhui/ai4s-link/discussions/1 |
+> | 2 | 书生·端砚每月 10,000 墨点，实际够用吗？ | https://github.com/jasonYhui/ai4s-link/discussions/2 |
+> | 3 | OpenAlex 想翻页超过 10000 条，免费 Key 怎么配？ | https://github.com/jasonYhui/ai4s-link/discussions/3 |
+> | 4 | arXiv API 每 3 秒 1 个请求，抓 5000 篇怎么排程？ | https://github.com/jasonYhui/ai4s-link/discussions/4 |
+> | 5 | 魔搭的免费 GPU 额度用完了，还有别的免费替代吗？ | https://github.com/jasonYhui/ai4s-link/discussions/5 |
+>
+> 下面保留原始草稿，供后续新增种子帖时参考格式。
+
 空讨论区比没有讨论区更劝退。这 5 条发在 **Q&A** 分类里，发完再开评论区。
 
 > 说明：帖子内容与站内资源页对应，第一条来的人有东西可看、有地方可接。
