@@ -11,7 +11,7 @@ const asset = (p: string) => `${base}${p}`
 export default defineConfig({
   base,
   lang: 'zh-CN',
-  title: '科研搭子',
+  title: '科研搭子 SciMate',
   description: 'AI4S 交叉学科资源与互助问答',
   head: [
     ['link', { rel: 'icon', href: asset('favicon.ico'), sizes: 'any' }],
@@ -31,7 +31,7 @@ export default defineConfig({
     ],
     footer: {
       message: '资源政策会变，请以官方页面为准；每条资源都标注了验证日期。',
-      copyright: '科研搭子 · ai4s.link'
+      copyright: '科研搭子 SciMate · ai4s.link'
     },
     sidebar: {
       '/resources/': [
