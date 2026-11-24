@@ -24,6 +24,8 @@ export default defineConfig({
     hostname: 'https://ai4s.link/'
   },
   themeConfig: {
+    // 导航左上角图标：取自完整 logo 左侧的螺旋标记（已去白底）
+    logo: { src: '/logo-mark.png', alt: '科学涌现', width: 28, height: 24 },
     nav: [
       { text: '科研资源', link: '/resources/' },
       {
