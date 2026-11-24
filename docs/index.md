@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: 赛灵社区
-  text: AI4S 交叉学科资源与互助问答
+  text: AI4S 交叉学科社区
   tagline: 把散落的免费算力、数据与工具收在一起，也让踩过的坑有人接住
   actions:
     - theme: brand

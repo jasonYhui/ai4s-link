@@ -12,7 +12,7 @@ export default defineConfig({
   base,
   lang: 'zh-CN',
   title: '赛灵社区',
-  description: 'AI4S 交叉学科资源与互助问答',
+  description: 'AI4S 交叉学科社区',
   head: [
     ['link', { rel: 'icon', href: asset('favicon.ico'), sizes: 'any' }],
     ['link', { rel: 'icon', type: 'image/svg+xml', href: asset('favicon.svg') }],
