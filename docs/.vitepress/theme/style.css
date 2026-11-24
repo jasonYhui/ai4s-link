@@ -720,12 +720,12 @@
 
 /* 页脚里的站内链接（问答入口） */
 .VPFooter a {
-  color: var(--vp-c-text-2);
+  color: var(--vp-c-brand-1);
+  font-weight: 500;
   text-decoration: none;
-  border-bottom: 1px solid var(--vp-c-divider);
-  transition: color 0.2s, border-color 0.2s;
+  border-bottom: 1px solid color-mix(in srgb, var(--vp-c-brand-1) 45%, transparent);
+  transition: border-color 0.2s;
 }
 .VPFooter a:hover {
-  color: var(--vp-c-brand-1);
   border-bottom-color: var(--vp-c-brand-1);
 }

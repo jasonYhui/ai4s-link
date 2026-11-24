@@ -37,9 +37,9 @@ export default defineConfig({
       { text: '学术招聘', link: '/jobs/' }
     ],
     footer: {
-      // 页脚 message 支持 HTML：这里补上问答页入口（导航栏固定 3 项，不占位）
-      message: '资源政策会变，请以官方页面为准；每条资源都标注了验证日期。<br><a href="/qa/">常见问题</a>',
-      copyright: '科学涌现 · ai4s.link'
+      // 页脚 message 支持 HTML
+      message: '欢迎加入 <a href="https://github.com/jasonYhui/ai4s-link/discussions" target="_blank" rel="noopener">科学涌现社区志愿者团队</a>',
+      copyright: ''
     },
     sidebar: {
       '/qa/': [
