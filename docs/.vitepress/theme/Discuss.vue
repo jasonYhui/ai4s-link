@@ -17,10 +17,7 @@ function visible() {
 <template>
   <div v-if="visible()" class="discuss-section">
     <h2 id="discuss" class="discuss-heading">提问 / 讨论</h2>
-    <p class="discuss-tip">
-      讨论统一在 GitHub Discussions 进行，本站不承载评论内容。
-      需要 GitHub 账号，才能发帖和回复。
-    </p>
+    <p class="discuss-tip">讨论统一在 GitHub Discussions 进行，本站不承载评论内容。</p>
 
     <div class="discuss-actions">
       <a class="discuss-btn discuss-btn--primary" :href="discussLinks.create" target="_blank" rel="noopener">
