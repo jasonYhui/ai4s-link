@@ -5,10 +5,6 @@ aside: false
 discuss: false
 ---
 
-# 科研资源
-
-只收**完全免费**的资源。每条都写清：是什么、怎么用、免费额度、适合场景、验证日期。
-
 <a class="ad-slot" href="https://github.com/jasonYhui/ai4s-link/discussions" target="_blank" rel="noopener">
   <span class="ad-slot-tag">广告</span>
   <span class="ad-slot-title">这里留给一位赞助商</span>
