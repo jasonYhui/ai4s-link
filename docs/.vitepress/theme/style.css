@@ -563,3 +563,22 @@
     height: 62px;
   }
 }
+
+/* ------------------------------------------------------------------
+   资源库首页放宽内容区
+   VitePress 默认把正文限制在 688px（含内边距约 720px），在宽屏上两侧
+   空白过多，卡片列表显得局促。用 :has() 只对含 banner 的页面放宽。
+   ------------------------------------------------------------------ */
+@media (min-width: 960px) {
+  /* VitePress 在 >=1440px 用 .VPDoc:not(.has-sidebar) .content[data-v-xxx]
+     （优先级 0,4,0）把正文限制在 784px。带 hash 的属性选择器无法用普通
+     选择器压过，这里用 !important 覆盖。 */
+  .VPDoc:has(.res-banner) .content,
+  .VPDoc:has(.res-banner) .content-container {
+    max-width: 1080px !important;
+  }
+  /* 顶部 banner 跟着变宽后，卡片两列也更舒展 */
+  .VPDoc:has(.res-banner) .res-banner {
+    margin-top: 1.4rem;
+  }
+}
