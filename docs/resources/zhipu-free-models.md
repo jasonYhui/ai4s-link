@@ -3,6 +3,7 @@ title: 智谱 GLM 免费模型
 description: GLM-4.7-Flash 与 GLM-4.6V-Flash 输入输出全免费，200K 上下文，适合整篇论文塞进去读
 category: 模型
 thumbChar: 智
+logo: '/logos/zhipu.png'
 thumbTone: model
 quota: 输入 / 输出 / 缓存全免费
 quotaNote: 有并发限制

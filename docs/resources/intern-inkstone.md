@@ -3,6 +3,7 @@ title: 书生·端砚 Intern InkStone
 description: 上海人工智能实验室的 AI 科研工作台，注册免费，每月赠送墨点额度用于模型调用
 category: 工作台
 thumbChar: 端
+logo: '/logos/inkstone.svg'
 thumbTone: work
 quota: 每月 10,000 墨点
 quotaNote: 以控制台实到为准

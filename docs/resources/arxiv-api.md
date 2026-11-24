@@ -3,6 +3,7 @@ title: arXiv API
 description: 官方预印本查询接口，完全免费无需注册，限流每 3 秒最多 1 个请求
 category: 数据
 thumbChar: 预
+logo: '/logos/arxiv.png'
 thumbTone: data
 quota: 完全免费 · 每 3 秒 1 请求
 quotaNote: 无需注册

@@ -28,7 +28,10 @@ const tone = computed(() => f.value.thumbTone || 'work')
     </nav>
 
     <header class="rd-head">
-      <div class="rd-thumb" :class="`rd-thumb--${tone}`">{{ f.thumbChar || '研' }}</div>
+      <div class="rd-thumb" :class="f.logo ? 'rd-thumb--logo' : `rd-thumb--${tone}`">
+        <img v-if="f.logo" :src="f.logo" :alt="f.title" />
+        <template v-else>{{ f.thumbChar || '研' }}</template>
+      </div>
       <div class="rd-info">
         <h1 class="rd-title">{{ f.title }}</h1>
         <div class="rd-tags">

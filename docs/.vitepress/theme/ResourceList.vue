@@ -39,7 +39,10 @@ const visible = computed(() =>
 
   <div class="rlist">
     <a v-for="r in visible" :key="r.slug" class="ritem" :href="`./${r.slug}`">
-      <div class="rthumb" :class="`rthumb--${r.tone}`">{{ r.char }}</div>
+      <div class="rthumb" :class="r.logo ? 'rthumb--logo' : `rthumb--${r.tone}`">
+        <img v-if="r.logo" :src="r.logo" :alt="r.title" loading="lazy" />
+        <template v-else>{{ r.char }}</template>
+      </div>
       <div class="rmain">
         <div class="rtitle"><span class="rtag">{{ r.category }}</span>{{ r.title }}</div>
         <div class="rquota">{{ r.quota }}</div>

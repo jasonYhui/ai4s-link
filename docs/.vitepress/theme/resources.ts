@@ -12,8 +12,10 @@ export interface ResourceItem {
   category: string
   /** 缩略图单字 */
   char: string
-  /** 缩略图配色档：work / compute / doc / data / model */
+  /** 缩略图配色档：work / compute / doc / data / model（无 logo 时显示色块+文字） */
   tone: 'work' | 'compute' | 'doc' | 'data' | 'model'
+  /** 官方 logo 路径，放在 docs/public 下 */
+  logo: string
   /** 免费额度（卡片上最显眼的一行） */
   quota: string
   /** 一句话定位，建议 40–60 字 */
@@ -30,6 +32,7 @@ export const categories = ['工作台', '算力', '文献', '数据', '模型'] 
 export const resources: ResourceItem[] = [
   {
     slug: 'intern-inkstone',
+    logo: '/logos/inkstone.svg',
     title: '书生·端砚 Intern InkStone',
     category: '工作台',
     char: '端',
@@ -41,6 +44,7 @@ export const resources: ResourceItem[] = [
   },
   {
     slug: 'modelscope-free-compute',
+    logo: '/logos/modelscope.png',
     title: '魔搭社区免费算力',
     category: '算力',
     char: '算',
@@ -52,6 +56,7 @@ export const resources: ResourceItem[] = [
   },
   {
     slug: 'carsi-portal',
+    logo: '/logos/carsi.png',
     title: 'CARSI 资源共享门户',
     category: '文献',
     char: '文',
@@ -63,6 +68,7 @@ export const resources: ResourceItem[] = [
   },
   {
     slug: 'openalex-api',
+    logo: '/logos/openalex.png',
     title: 'OpenAlex 文献数据 API',
     category: '数据',
     char: '数',
@@ -74,6 +80,7 @@ export const resources: ResourceItem[] = [
   },
   {
     slug: 'arxiv-api',
+    logo: '/logos/arxiv.png',
     title: 'arXiv API',
     category: '数据',
     char: '预',
@@ -85,6 +92,7 @@ export const resources: ResourceItem[] = [
   },
   {
     slug: 'zhipu-free-models',
+    logo: '/logos/zhipu.png',
     title: '智谱 GLM 免费模型',
     category: '模型',
     char: '智',

@@ -708,3 +708,33 @@
     white-space: nowrap;
   }
 }
+
+/* ------------------------------------------------------------------
+   产品 logo 图标：白底卡片
+   品牌 logo 多按白底设计（arXiv 红黑、OpenAlex 黑、智谱深色），
+   放在彩色底上会失真；统一用白底 + 细边框，深色模式下也清晰。
+   ------------------------------------------------------------------ */
+.rthumb--logo,
+.rd-thumb--logo {
+  background: #fff;
+  border: 1px solid var(--vp-c-divider);
+  padding: 16px;
+}
+.rthumb--logo img,
+.rd-thumb--logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.rd-thumb--logo {
+  padding: 22px;
+}
+@media (max-width: 640px) {
+  .rthumb--logo {
+    padding: 12px;
+  }
+  .rd-thumb--logo {
+    padding: 14px;
+  }
+}

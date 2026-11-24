@@ -3,6 +3,7 @@ title: 魔搭社区免费算力
 description: 阿里系模型社区，CPU 资源长期免费、GPU 算力限额免费，绑定阿里云账号即可领
 category: 算力
 thumbChar: 算
+logo: '/logos/modelscope.png'
 thumbTone: compute
 quota: CPU 长期免费 · GPU 限额免费
 quotaNote: 额度以控制台为准

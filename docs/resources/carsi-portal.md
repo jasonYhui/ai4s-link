@@ -3,6 +3,7 @@ title: CARSI 资源共享门户
 description: 一个入口访问各家给高校的资源，其中 15 个长期免费
 category: 文献
 thumbChar: 文
+logo: '/logos/carsi.png'
 thumbTone: doc
 quota: 15 个长期免费资源
 quotaNote: 需校园网账号

@@ -3,6 +3,7 @@ title: OpenAlex 文献数据 API
 description: 开放学术知识图谱，数据与基础 API 免费，无需密钥即可查询，免费申请 Key 后每日额度提升 10 倍
 category: 数据
 thumbChar: 数
+logo: '/logos/openalex.png'
 thumbTone: data
 quota: 无密钥可用 · 免费 Key 额度 ×10
 quotaNote: 基础翻页限 1 万条
