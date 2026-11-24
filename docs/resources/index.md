@@ -9,11 +9,19 @@ discuss: false
 
 只收**完全免费**的资源。每条都写清：是什么、怎么用、免费额度、适合场景、验证日期。
 
-<div class="res-stats">
-  <div class="res-stat"><strong>6</strong><span>条资源</span></div>
-  <div class="res-stat"><strong>4</strong><span>个分类</span></div>
-  <div class="res-stat"><strong>100%</strong><span>有官方出处</span></div>
-  <div class="res-stat"><strong>0</strong><span>条付费内容</span></div>
+<div class="res-banner">
+  <div class="res-banner-text">
+    <p class="res-banner-kicker">AI4S 免费资源库</p>
+    <h2 class="res-banner-title">6 条已核实 · 4 个分类 · 0 条付费</h2>
+    <p class="res-banner-sub">全部有官方出处，每条都标注验证日期。政策变了就更新。</p>
+  </div>
+  <svg class="res-banner-mark" viewBox="0 0 120 120" aria-hidden="true">
+    <path d="M60 18 L69 51 L102 60 L69 69 L60 102 L51 69 L18 60 L51 51 Z" fill="rgba(255,255,255,0.16)"/>
+    <circle cx="26" cy="26" r="6" fill="rgba(255,255,255,0.14)"/>
+    <circle cx="94" cy="26" r="6" fill="rgba(255,255,255,0.14)"/>
+    <circle cx="26" cy="94" r="6" fill="rgba(255,255,255,0.14)"/>
+    <circle cx="94" cy="94" r="6" fill="rgba(255,255,255,0.14)"/>
+  </svg>
 </div>
 
 <div class="rlist">
