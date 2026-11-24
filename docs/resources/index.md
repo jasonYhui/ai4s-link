@@ -8,7 +8,7 @@ discuss: false
 <a class="ad-slot" href="https://github.com/jasonYhui/ai4s-link/discussions" target="_blank" rel="noopener">
   <span class="ad-slot-tag">广告</span>
   <span class="ad-slot-title">这里留给一位赞助商</span>
-  <span class="ad-slot-sub">建议尺寸 1020 × 150 · 想投放请到交叉论坛留言</span>
+  <span class="ad-slot-sub">建议尺寸 1020 × 220 · 想投放请到交叉论坛留言</span>
 </a>
 
 <ResourceList />
