@@ -49,7 +49,7 @@ const visible = computed(() =>
         <p class="rdesc">{{ r.desc }}</p>
         <div class="rfoot">
           <span>{{ r.source }}</span><i>·</i><span>验证 {{ r.verified }}</span>
-          <span class="rbtn">查看详情 ›</span>
+          <span class="rbtn">免费领取 ›</span>
         </div>
       </div>
     </a>

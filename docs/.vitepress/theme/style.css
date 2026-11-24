@@ -195,27 +195,6 @@
   }
 }
 
-/* 底部入口 */
-.res-more {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-top: 1rem;
-}
-.res-more a {
-  font-size: 0.85rem;
-  padding: 0.45rem 0.9rem;
-  border-radius: 8px;
-  border: 1px solid var(--vp-c-divider);
-  background: var(--vp-c-bg-soft);
-  color: var(--vp-c-text-1);
-  text-decoration: none !important;
-  transition: border-color 0.2s;
-}
-.res-more a:hover {
-  border-color: var(--vp-c-brand-1);
-}
-
 /* ------------------------------------------------------------------
    资源详情页头部（对标商品详情页：面包屑 + 头图 + 标题 + 价格位 + 步骤卡）
    ------------------------------------------------------------------ */
