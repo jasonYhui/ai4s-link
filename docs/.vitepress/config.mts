@@ -39,38 +39,6 @@ export default defineConfig({
       copyright: '科学涌现社区 · ai4s.link'
     },
     sidebar: {
-      '/resources/': [
-        {
-          text: '科研工作台',
-          collapsed: false,
-          items: [
-            { text: '书生·端砚 Intern InkStone', link: '/resources/intern-inkstone' }
-          ]
-        },
-        {
-          text: '算力',
-          collapsed: false,
-          items: [
-            { text: '魔搭社区免费算力', link: '/resources/modelscope-free-compute' }
-          ]
-        },
-        {
-          text: '文献与数据',
-          collapsed: false,
-          items: [
-            { text: 'CARSI 资源共享门户', link: '/resources/carsi-portal' },
-            { text: 'OpenAlex 文献数据 API', link: '/resources/openalex-api' },
-            { text: 'arXiv API', link: '/resources/arxiv-api' }
-          ]
-        },
-        {
-          text: '模型 API',
-          collapsed: false,
-          items: [
-            { text: '智谱 GLM 免费模型', link: '/resources/zhipu-free-models' }
-          ]
-        }
-      ],
       '/qa/': [
         {
           text: '常见问题',
