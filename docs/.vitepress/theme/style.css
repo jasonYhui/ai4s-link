@@ -246,3 +246,270 @@
 .res-more a:hover {
   border-color: var(--vp-c-brand-1);
 }
+
+/* ------------------------------------------------------------------
+   资源详情页头部（对标商品详情页：面包屑 + 头图 + 标题 + 价格位 + 步骤卡）
+   ------------------------------------------------------------------ */
+.rd {
+  margin-bottom: 2rem;
+}
+
+/* 面包屑 */
+.rd-crumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 1.6rem;
+  font-size: 0.78rem;
+  color: var(--vp-c-text-3);
+}
+.vp-doc .rd-crumb a {
+  color: var(--vp-c-text-3);
+  text-decoration: none;
+}
+.vp-doc .rd-crumb a:hover {
+  color: var(--vp-c-brand-1);
+}
+.rd-sep {
+  opacity: 0.45;
+}
+.rd-crumb em {
+  font-style: normal;
+  color: var(--vp-c-text-2);
+}
+
+/* 头部：左图右信息 */
+.rd-head {
+  display: flex;
+  gap: 1.6rem;
+  align-items: flex-start;
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+.rd-thumb {
+  flex: 0 0 auto;
+  width: 132px;
+  height: 132px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  user-select: none;
+}
+.rd-thumb--work    { background: linear-gradient(135deg, #3451b2, #5b73d8); }
+.rd-thumb--compute { background: linear-gradient(135deg, #0f766e, #14b8a6); }
+.rd-thumb--doc     { background: linear-gradient(135deg, #6d28d9, #a78bfa); }
+.rd-thumb--data    { background: linear-gradient(135deg, #0369a1, #38bdf8); }
+.rd-thumb--model   { background: linear-gradient(135deg, #b45309, #f59e0b); }
+
+.rd-info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.rd-title {
+  margin: 0 0 0.6rem;
+  padding: 0;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+.rd-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.7rem;
+}
+.rd-tag {
+  font-size: 0.72rem;
+  padding: 0.1rem 0.2rem 0.1rem 0.2rem;
+  padding-inline: 0.45rem;
+  border-radius: 4px;
+  border: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-2);
+}
+.rd-tag--free {
+  color: var(--vp-c-brand-1);
+  border-color: color-mix(in srgb, var(--vp-c-brand-1) 40%, transparent);
+  background: color-mix(in srgb, var(--vp-c-brand-1) 8%, transparent);
+}
+.rd-quota {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--vp-c-brand-1);
+  margin-bottom: 0.5rem;
+}
+.rd-quota em {
+  font-style: normal;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--vp-c-text-3);
+}
+.rd-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--vp-c-text-3);
+}
+.rd-meta i {
+  font-style: normal;
+  opacity: 0.5;
+}
+.rd-src {
+  color: var(--vp-c-text-2);
+  font-weight: 500;
+}
+
+/* 上手步骤卡片 */
+.rd-card {
+  position: relative;
+  margin-top: 1.8rem;
+  padding: 1.4rem 1.6rem 1.2rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  background: var(--vp-c-bg-soft);
+}
+.rd-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+.rd-card-head h2 {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.rd-badge {
+  font-size: 0.7rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+  color: #b45309;
+  background: color-mix(in srgb, #f59e0b 16%, transparent);
+}
+
+/* 步骤列表：编号 + 竖向连接线 */
+.rd-steps {
+  list-style: none;
+  margin: 0 0 0.5rem;
+  padding: 0;
+  counter-reset: none;
+}
+.rd-steps li {
+  position: relative;
+  display: flex;
+  gap: 0.85rem;
+  padding-bottom: 1rem;
+}
+.rd-steps li:last-child {
+  padding-bottom: 0.2rem;
+}
+/* 连接线 */
+.rd-steps li:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 26px;
+  bottom: 2px;
+  width: 1px;
+  background: var(--vp-c-divider);
+}
+.rd-num {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--vp-c-text-2);
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+}
+.rd-step {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+.rd-step-label {
+  flex: 0 0 auto;
+  min-width: 3.2em;
+  color: var(--vp-c-text-3);
+  font-size: 0.82rem;
+}
+.rd-step-text {
+  flex: 1 1 12em;
+  color: var(--vp-c-text-1);
+}
+.rd-step-text a {
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--vp-c-brand-1) 35%, transparent);
+}
+.rd-step-text code {
+  font-size: 0.82em;
+}
+
+/* 主按钮 */
+.vp-doc .rd-cta {
+  display: inline-block;
+  margin-top: 0.9rem;
+  padding: 0.55rem 1.4rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--vp-c-brand-1);
+  text-decoration: none !important;
+  transition: background-color 0.2s;
+}
+.vp-doc .rd-cta:hover {
+  background: var(--vp-c-brand-2);
+  color: #fff;
+}
+
+/* 窄屏：头图缩小、信息竖排 */
+@media (max-width: 640px) {
+  .rd-head {
+    gap: 1rem;
+  }
+  .rd-thumb {
+    width: 84px;
+    height: 84px;
+    font-size: 2rem;
+    border-radius: 10px;
+  }
+  .rd-title {
+    font-size: 1.2rem;
+  }
+  .rd-quota {
+    font-size: 1.1rem;
+  }
+  .rd-card {
+    padding: 1.1rem 1rem 1rem;
+  }
+  .rd-step {
+    gap: 0.35rem;
+  }
+  .rd-step-label {
+    min-width: 0;
+  }
+}
