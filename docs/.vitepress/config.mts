@@ -28,6 +28,7 @@ export default defineConfig({
     logo: { src: '/logo-mark.png', alt: '科学涌现', width: 28, height: 24 },
     nav: [
       { text: '科研资源', link: '/resources/' },
+      { text: '精选资源', link: '/premium/' },
       {
         text: '交叉论坛',
         link: 'https://github.com/jasonYhui/ai4s-link/discussions',
