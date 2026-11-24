@@ -1,0 +1,43 @@
+/* ------------------------------------------------------------------
+   导航栏布局：把菜单项从最右侧移到站名旁边
+
+   原因：VitePress 的 .content-body 里，.VPNavBarSearch 是第一个子元素
+   且 flex-grow: 1，会吃掉全部剩余空间，导致菜单上的 margin-right: auto
+   被解析为 0。所以这里同时做两件事：
+     1. 搜索框不再伸缩（flex-grow: 0）
+     2. 用 order 重排视觉顺序：菜单 → 搜索 → 主题切换 → 其他
+
+   视觉结果：站名 ← 菜单    ……   搜索/主题切换 →
+   ------------------------------------------------------------------ */
+@media (min-width: 768px) {
+  .VPNavBar .content-body .VPNavBarMenu {
+    order: 1;
+    margin-left: 28px;
+    margin-right: auto; /* 吸收剩余空间，把自己顶到左边 */
+  }
+
+  .VPNavBar .content-body .VPNavBarSearch {
+    order: 2;
+    flex-grow: 0;
+  }
+
+  .VPNavBar .content-body .VPNavBarAppearance {
+    order: 3;
+  }
+
+  .VPNavBar .content-body .VPNavBarExtra {
+    order: 4;
+  }
+
+  .VPNavBar .content-body .VPNavBarHamburger {
+    order: 5;
+  }
+
+  /* 菜单项之间收紧一点，贴近标题时更紧凑 */
+  .VPNavBarMenuLink + .VPNavBarMenuLink,
+  .VPNavBarMenuGroup + .VPNavBarMenuGroup,
+  .VPNavBarMenuGroup + .VPNavBarMenuLink,
+  .VPNavBarMenuLink + .VPNavBarMenuGroup {
+    margin-left: 22px;
+  }
+}
