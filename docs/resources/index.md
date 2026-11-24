@@ -16,48 +16,84 @@ discuss: false
   <div class="res-stat"><strong>0</strong><span>条付费内容</span></div>
 </div>
 
-<div class="res-grid">
+<div class="rlist">
 
-<a class="res-card" href="./intern-inkstone">
-  <div class="res-card-head"><span class="res-tag">工作台</span><span class="res-date">2026-11-23</span></div>
-  <h3>书生·端砚 Intern InkStone</h3>
-  <p>上海人工智能实验室的 AI 科研工作台。论文精读、课题空间、开发机都在一个界面里。</p>
-  <div class="res-quota">每月 10,000 墨点</div>
+<a class="ritem" href="./intern-inkstone">
+  <div class="rthumb rthumb--work">端</div>
+  <div class="rmain">
+    <div class="rtitle"><span class="rtag">工作台</span>书生·端砚 Intern InkStone</div>
+    <div class="rquota">每月 10,000 墨点</div>
+    <p class="rdesc">上海人工智能实验室的 AI 科研工作台。论文精读、课题空间、开发机都在一个界面里，整篇 PDF 也能塞进去读。</p>
+    <div class="rfoot">
+      <span>上海 AI 实验室</span><i>·</i><span>验证 2026-11-23</span>
+      <span class="rbtn">查看详情 ›</span>
+    </div>
+  </div>
 </a>
 
-<a class="res-card" href="./modelscope-free-compute">
-  <div class="res-card-head"><span class="res-tag">算力</span><span class="res-date">2026-11-23</span></div>
-  <h3>魔搭社区免费算力</h3>
-  <p>阿里系模型社区，提供在线 Notebook 算力。跑 demo、验证想法够用。</p>
-  <div class="res-quota">CPU 长期免费 · GPU 限额免费</div>
+<a class="ritem" href="./modelscope-free-compute">
+  <div class="rthumb rthumb--compute">算</div>
+  <div class="rmain">
+    <div class="rtitle"><span class="rtag">算力</span>魔搭社区免费算力</div>
+    <div class="rquota">CPU 长期免费 · GPU 限额免费</div>
+    <p class="rdesc">阿里系模型社区，提供在线 Notebook 算力。跑通一个 demo、验证想法够用，不用为自己买卡。</p>
+    <div class="rfoot">
+      <span>阿里巴巴</span><i>·</i><span>验证 2026-11-23</span>
+      <span class="rbtn">查看详情 ›</span>
+    </div>
+  </div>
 </a>
 
-<a class="res-card" href="./carsi-portal">
-  <div class="res-card-head"><span class="res-tag">文献</span><span class="res-date">2026-11-23</span></div>
-  <h3>CARSI 资源共享门户</h3>
-  <p>一个入口访问各家给高校的资源。校园网账号认证，不用挂 VPN 回校内网。</p>
-  <div class="res-quota">15 个长期免费资源</div>
+<a class="ritem" href="./carsi-portal">
+  <div class="rthumb rthumb--doc">文</div>
+  <div class="rmain">
+    <div class="rtitle"><span class="rtag">文献</span>CARSI 资源共享门户</div>
+    <div class="rquota">15 个长期免费资源</div>
+    <p class="rdesc">一个入口访问各家给高校的资源。校园网账号认证，不用挂 VPN 回校内网，也不用逐个网站找学校入口。</p>
+    <div class="rfoot">
+      <span>CARSI</span><i>·</i><span>验证 2026-11-23</span>
+      <span class="rbtn">查看详情 ›</span>
+    </div>
+  </div>
 </a>
 
-<a class="res-card" href="./openalex-api">
-  <div class="res-card-head"><span class="res-tag">数据</span><span class="res-date">2026-11-23</span></div>
-  <h3>OpenAlex 文献数据 API</h3>
-  <p>开放学术知识图谱，论文、作者、机构、引用关系连成一张可查询的网。</p>
-  <div class="res-quota">无密钥可用 · 免费 Key 额度 ×10</div>
+<a class="ritem" href="./openalex-api">
+  <div class="rthumb rthumb--data">数</div>
+  <div class="rmain">
+    <div class="rtitle"><span class="rtag">数据</span>OpenAlex 文献数据 API</div>
+    <div class="rquota">无密钥可用 · 免费 Key 额度 ×10</div>
+    <p class="rdesc">开放学术知识图谱，论文、作者、机构、引用关系连成一张可查询的网。做文献计量和综述取数很省事。</p>
+    <div class="rfoot">
+      <span>OurResearch</span><i>·</i><span>验证 2026-11-23</span>
+      <span class="rbtn">查看详情 ›</span>
+    </div>
+  </div>
 </a>
 
-<a class="res-card" href="./arxiv-api">
-  <div class="res-card-head"><span class="res-tag">数据</span><span class="res-date">2026-11-23</span></div>
-  <h3>arXiv API</h3>
-  <p>官方预印本查询接口，按作者、分类、关键词检索元数据。</p>
-  <div class="res-quota">完全免费 · 每 3 秒 1 请求</div>
+<a class="ritem" href="./arxiv-api">
+  <div class="rthumb rthumb--data">预</div>
+  <div class="rmain">
+    <div class="rtitle"><span class="rtag">数据</span>arXiv API</div>
+    <div class="rquota">完全免费 · 每 3 秒 1 请求</div>
+    <p class="rdesc">官方预印本查询接口，按作者、分类、关键词检索元数据。限流明确，适合给方向建增量文献库。</p>
+    <div class="rfoot">
+      <span>arXiv</span><i>·</i><span>验证 2026-11-23</span>
+      <span class="rbtn">查看详情 ›</span>
+    </div>
+  </div>
 </a>
 
-<a class="res-card" href="./zhipu-free-models">
-  <div class="res-card-head"><span class="res-tag">模型</span><span class="res-date">2026-11-23</span></div>
-  <h3>智谱 GLM 免费模型</h3>
-  <p>两个完全免费的 API 模型，200K 上下文能把整篇论文塞进去读。</p>
-  <div class="res-quota">输入 / 输出 / 缓存全免费</div>
+<a class="ritem" href="./zhipu-free-models">
+  <div class="rthumb rthumb--model">智</div>
+  <div class="rmain">
+    <div class="rtitle"><span class="rtag">模型</span>智谱 GLM 免费模型</div>
+    <div class="rquota">输入 / 输出 / 缓存全免费</div>
+    <p class="rdesc">两个完全免费的 API 模型，200K 上下文能把整篇论文塞进去读。OpenAI 兼容格式，改个模型名就能跑。</p>
+    <div class="rfoot">
+      <span>智谱 AI</span><i>·</i><span>验证 2026-11-23</span>
+      <span class="rbtn">查看详情 ›</span>
+    </div>
+  </div>
 </a>
 
 </div>
