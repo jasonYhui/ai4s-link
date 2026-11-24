@@ -9,8 +9,6 @@ discuss: false
 
 只收**完全免费**的资源。每条都写清：是什么、怎么用、免费额度、适合场景、验证日期。
 
-<p class="res-facts">6 条已核实 · 4 个分类 · 0 条付费 · 全部有官方出处</p>
-
 <a class="ad-slot" href="https://github.com/jasonYhui/ai4s-link/discussions" target="_blank" rel="noopener">
   <span class="ad-slot-tag">广告</span>
   <span class="ad-slot-title">这里留给一位赞助商</span>
