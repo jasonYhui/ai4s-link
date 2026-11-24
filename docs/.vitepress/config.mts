@@ -37,7 +37,8 @@ export default defineConfig({
       { text: '学术招聘', link: '/jobs/' }
     ],
     footer: {
-      message: '资源政策会变，请以官方页面为准；每条资源都标注了验证日期。',
+      // 页脚 message 支持 HTML：这里补上问答页入口（导航栏固定 3 项，不占位）
+      message: '资源政策会变，请以官方页面为准；每条资源都标注了验证日期。<br><a href="/qa/">常见问题</a>',
       copyright: '科学涌现 · ai4s.link'
     },
     sidebar: {
