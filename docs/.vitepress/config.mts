@@ -11,7 +11,7 @@ const asset = (p: string) => `${base}${p}`
 export default defineConfig({
   base,
   lang: 'zh-CN',
-  title: '科学涌现社区',
+  title: '科学涌现',
   description: 'AI4S 交叉学科社区',
   head: [
     ['link', { rel: 'icon', href: asset('favicon.ico'), sizes: 'any' }],
@@ -38,7 +38,7 @@ export default defineConfig({
     ],
     footer: {
       message: '资源政策会变，请以官方页面为准；每条资源都标注了验证日期。',
-      copyright: '科学涌现社区 · ai4s.link'
+      copyright: '科学涌现 · ai4s.link'
     },
     sidebar: {
       '/qa/': [

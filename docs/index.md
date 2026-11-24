@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: 科学涌现社区
+  name: 科学涌现
   text: AI4S 交叉学科社区
   actions:
     - theme: brand
