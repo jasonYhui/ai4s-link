@@ -13,7 +13,7 @@ officialUrl: https://discovery.intern-ai.org.cn
 officialLabel: 打开端砚
 steps:
   - label: 打开
-    text: 访问 <a href="https://discovery.intern-ai.org.cn" target="_blank" rel="noopener">discovery.intern-ai.org.cn</a>
+    text: 访问 <a href="https://discovery.intern-ai.org.cn/token-plan/home?tabIndex=0" target="_blank" rel="noopener">discovery.intern-ai.org.cn/token-plan</a>，这里是墨点领取页
   - label: 登录
     text: 微信扫码或第三方账号登录，注册即用，<strong>不需要申请、不需要学校审批</strong>
   - label: 选择端
