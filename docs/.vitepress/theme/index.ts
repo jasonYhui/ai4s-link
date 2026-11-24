@@ -3,6 +3,7 @@ import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import Discuss from './Discuss.vue'
 import ResourceHeader from './ResourceHeader.vue'
+import ResourceList from './ResourceList.vue'
 import './style.css'
 
 export default {
@@ -10,6 +11,7 @@ export default {
   enhanceApp({ app }) {
     // 资源详情页头部组件，可直接在 markdown 里用 <ResourceHeader />
     app.component('ResourceHeader', ResourceHeader)
+    app.component('ResourceList', ResourceList)
   },
   Layout() {
     return h(DefaultTheme.Layout, null, {
