@@ -795,9 +795,3 @@
   height: 19.5px;
   width: auto;
 }
-html.dark .VPNavBarTitle .logo {
-  background: #fff;
-  border-radius: 4px;
-  padding: 2px 3px;
-  box-sizing: content-box;
-}

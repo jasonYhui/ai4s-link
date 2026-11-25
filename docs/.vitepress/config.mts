@@ -10,6 +10,9 @@ const asset = (p: string) => `${base}${p}`
 
 export default defineConfig({
   base,
+  // 关闭深色模式：导航栏只保留 logo，不显示明暗切换开关，
+  // 站点固定浅色（否则访客系统是深色时会自动变暗，却没有开关可切回）
+  appearance: false,
   lang: 'zh-CN',
   title: '科学涌现',
   description: 'AI4S 交叉学科社区',
