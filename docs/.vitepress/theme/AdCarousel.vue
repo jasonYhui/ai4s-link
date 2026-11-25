@@ -4,7 +4,7 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 /**
  * 首页轮播广告位
  *
- * 两条内容：赞助商（智谱）+ 社区自我介绍。
+ * 两条内容，顺序即轮播顺序：第一帧是社区自我介绍（含「加入社区」），第二帧是赞助商（智谱）。
  * 换广告时改下面的 slides 即可；高度由 .ad-carousel 的 min-height 控制
  * （style.css 里是 242px，即原 161px 的 1.5 倍）。
  */
@@ -27,19 +27,6 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    tag: '广告',
-    theme: 'sponsor',
-    logo: '/logos/zhipu.png',
-    logoAlt: '智谱 AI',
-    kicker: '智谱 AI · 开放平台',
-    headline:
-      '<span class="ad-model">GLM-4.7-Flash</span> 与 <span class="ad-model">GLM-4.6V-Flash</span>，输入 / 输出 / 缓存全免费',
-    sub: '200K 上下文能把整篇论文塞进去读，OpenAI 兼容格式、改个模型名就能跑。',
-    chips: ['200K 上下文', '视觉理解可选', 'OpenAI 兼容'],
-    cta: '查看免费额度',
-    href: '/resources/zhipu-free-models'
-  },
-  {
     tag: '关于我们',
     theme: 'community',
     logo: '/favicon.svg',
@@ -51,6 +38,19 @@ const slides: Slide[] = [
     cta: '加入社区',
     href: 'https://github.com/jasonYhui/ai4s-link/discussions',
     external: true
+  },
+  {
+    tag: '广告',
+    theme: 'sponsor',
+    logo: '/logos/zhipu.png',
+    logoAlt: '智谱 AI',
+    kicker: '智谱 AI · 开放平台',
+    headline:
+      '<span class="ad-model">GLM-4.7-Flash</span> 与 <span class="ad-model">GLM-4.6V-Flash</span>，输入 / 输出 / 缓存全免费',
+    sub: '200K 上下文能把整篇论文塞进去读，OpenAI 兼容格式、改个模型名就能跑。',
+    chips: ['200K 上下文', '视觉理解可选', 'OpenAI 兼容'],
+    cta: '查看免费额度',
+    href: '/resources/zhipu-free-models'
   }
 ]
 
