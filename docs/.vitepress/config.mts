@@ -31,16 +31,16 @@ export default defineConfig({
     // 宽高按图片实际比例（476:92）给出，避免首屏占位跳动；实际显示高度由 style.css 控制
     logo: { src: '/logo-full.png', alt: '科学涌现', width: 101, height: 19.5 },
     siteTitle: false,
+    // 导航只留三项、靠右显示（精选资源改由资源库页面内链，见 resources/index.md）
     nav: [
-      { text: '科研资源', link: '/resources/' },
-      { text: '精选资源', link: '/premium/' },
+      { text: '资源', link: '/resources/' },
       {
-        text: '交叉论坛',
+        text: '论坛',
         link: 'https://github.com/jasonYhui/ai4s-link/discussions',
         target: '_blank',
         rel: 'noopener noreferrer'
       },
-      { text: '学术招聘', link: '/jobs/' }
+      { text: '招聘', link: '/jobs/' }
     ],
     footer: {
       // 页脚 message 支持 HTML

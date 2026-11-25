@@ -11,4 +11,6 @@ discuss: false
   <span class="ad-slot-sub">建议尺寸 1020 × 220 · 想投放请到交叉论坛留言</span>
 </a>
 
+<p class="premium-meta">需要付费的课程、数据集与工具订阅，见 <a href="/premium/">精选资源</a>。</p>
+
 <ResourceList />
