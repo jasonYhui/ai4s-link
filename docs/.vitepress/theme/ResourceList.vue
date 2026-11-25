@@ -70,7 +70,7 @@ const visible = computed(() => {
   </nav>
 
   <div v-if="visible.length" class="rlist">
-    <a v-for="r in visible" :key="r.slug" class="ritem" :href="`./${r.slug}`">
+    <a v-for="r in visible" :key="r.slug" class="ritem" :href="`/resources/${r.slug}`">
       <div class="rthumb" :class="r.logo ? 'rthumb--logo' : `rthumb--${r.tone}`">
         <img v-if="r.logo" :src="r.logo" :alt="r.title" loading="lazy" />
         <template v-else>{{ r.char }}</template>

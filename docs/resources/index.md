@@ -1,14 +1,15 @@
 ---
 title: 科研资源
-description: AI4S 交叉学科可用的免费科研工作台、算力、文献数据与模型 API，只收免费的
+description: 资源库已移到首页
+head:
+  - - meta
+    - http-equiv: refresh
+      content: 0; url=/
+  - - link
+    - rel: canonical
+      href: /
 aside: false
 discuss: false
 ---
 
-<a class="ad-slot" href="https://github.com/jasonYhui/ai4s-link/discussions" target="_blank" rel="noopener">
-  <span class="ad-slot-tag">广告</span>
-  <span class="ad-slot-title">这里留给一位赞助商</span>
-  <span class="ad-slot-sub">建议尺寸 1020 × 220 · 想投放请到交叉论坛留言</span>
-</a>
-
-<ResourceList />
+资源库已移到[首页](/)。

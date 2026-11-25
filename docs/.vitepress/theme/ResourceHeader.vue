@@ -20,8 +20,6 @@ const tone = computed(() => f.value.thumbTone || 'work')
     <nav class="rd-crumb" aria-label="面包屑">
       <a href="/">首页</a>
       <span class="rd-sep">›</span>
-      <a href="/resources/">科研资源</a>
-      <span class="rd-sep">›</span>
       <span>{{ f.category }}</span>
       <span class="rd-sep">›</span>
       <em>{{ f.title }}</em>

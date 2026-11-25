@@ -33,7 +33,7 @@ export default defineConfig({
     siteTitle: false,
     // 导航只留三项、靠右显示（精选资源改由资源库页面内链，见 resources/index.md）
     nav: [
-      { text: '资源', link: '/resources/' },
+      { text: '资源', link: '/' },
       {
         text: '论坛',
         link: 'https://github.com/jasonYhui/ai4s-link/discussions',

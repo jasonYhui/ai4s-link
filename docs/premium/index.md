@@ -8,7 +8,7 @@ discuss: false
 <h1 id="premium-title">精选资源</h1>
 
 <p class="premium-lede">这里放<strong>需要付费</strong>的资料：课程、数据集、工具订阅、书籍。<br>
-免费资源在 <a href="/resources/">科研资源</a>，两边严格分开。</p>
+免费资源在 <a href="/">科研资源</a>，两边严格分开。</p>
 
 <div class="premium-notice">
   <strong>为什么单独分开？</strong>
