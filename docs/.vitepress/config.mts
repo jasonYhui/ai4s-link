@@ -43,8 +43,8 @@ export default defineConfig({
       { text: '招聘', link: '/jobs/' }
     ],
     footer: {
-      // 页脚 message 支持 HTML
-      message: '欢迎加入 <a href="https://github.com/jasonYhui/ai4s-link/discussions" target="_blank" rel="noopener">科学涌现社区志愿者团队</a>',
+      // 页脚 message 支持 HTML；链接放在动作「点击加入」上
+      message: '<a href="https://github.com/jasonYhui/ai4s-link/discussions" target="_blank" rel="noopener">点击加入</a>，欢迎成为科学涌现社区成员',
       copyright: ''
     },
     sidebar: {
