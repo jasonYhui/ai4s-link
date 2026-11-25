@@ -24,8 +24,10 @@ export default defineConfig({
     hostname: 'https://ai4s.link/'
   },
   themeConfig: {
-    // 导航左上角图标：取自完整 logo 左侧的螺旋标记（已去白底）
-    logo: { src: '/logo-mark.png', alt: '科学涌现', width: 28, height: 24 },
+    // 导航栏显示完整 logo（螺旋标记 + 渐变字标），隐藏重复的文字站名
+    // 宽高按图片实际比例（476:92）给出，避免首屏占位跳动；实际显示高度由 style.css 控制
+    logo: { src: '/logo-full.png', alt: '科学涌现', width: 101, height: 19.5 },
+    siteTitle: false,
     nav: [
       { text: '科研资源', link: '/resources/' },
       { text: '精选资源', link: '/premium/' },

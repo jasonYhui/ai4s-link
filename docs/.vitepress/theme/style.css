@@ -786,3 +786,18 @@
   font-size: 0.78rem;
   color: var(--vp-c-text-3);
 }
+
+/* ------------------------------------------------------------------
+   导航栏 logo：透明底 PNG，标记略高于字标（按官方稿比例），定高 19.5px。
+   深色模式下字标的深蓝端会糊进背景，故垫一块白底衬（衬边随 logo 等比缩小）。
+   ------------------------------------------------------------------ */
+.VPNavBarTitle .logo {
+  height: 19.5px;
+  width: auto;
+}
+html.dark .VPNavBarTitle .logo {
+  background: #fff;
+  border-radius: 4px;
+  padding: 2px 3px;
+  box-sizing: content-box;
+}
