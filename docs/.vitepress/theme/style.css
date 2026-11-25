@@ -552,12 +552,12 @@
   /* VitePress 在 >=1440px 用 .VPDoc:not(.has-sidebar) .content[data-v-xxx]
      （优先级 0,4,0）把正文限制在 784px。带 hash 的属性选择器无法用普通
      选择器压过，这里用 !important 覆盖。 */
-  .VPDoc:has(.ad-slot) .content,
-  .VPDoc:has(.ad-slot) .content-container {
+  .VPDoc:has(.ad-carousel) .content,
+  .VPDoc:has(.ad-carousel) .content-container {
     max-width: 1080px !important;
   }
   /* 顶部 banner 跟着变宽后，卡片两列也更舒展 */
-  .VPDoc:has(.ad-slot) .ad-slot {
+  .VPDoc:has(.ad-carousel) .ad-carousel {
     margin-top: 1.2rem;
   }
 }
@@ -585,104 +585,182 @@
   background: var(--vp-c-bg);
 }
 /* ------------------------------------------------------------------
-   赞助商横幅（.ad-slot--sponsor）：虚线占位换成真实素材后的样式
-   换广告主时只改 index.md 的内容和这里的渐变配色
+   首页轮播广告位
+   高度：242px = 原单条横幅 161px 的 1.5 倍；用 min-height 保底，
+   窄屏内容换行变高时容器跟着长，不会被裁切。
+   换内容改 AdCarousel.vue 的 slides，配色改下面的 --sponsor / --community。
    ------------------------------------------------------------------ */
-.vp-doc .ad-slot--sponsor {
+.ad-carousel {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr;
+  min-height: 242px;
+  margin: 0 0 2.2rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--vp-c-bg-soft);
+}
+/* grid 叠放：所有 slide 占同一格；1fr 行让 slide 撑满容器高度 */
+.ad-carousel-track {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+.ad-slide {
+  grid-area: 1 / 1;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 0.9rem 1.1rem;
-  min-height: 0;
-  padding: 1.3rem 1.5rem;
-  border-style: solid;
+  align-content: center;
+  gap: 0.9rem 1.3rem;
+  padding: 1.5rem 1.9rem;
+  text-decoration: none !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.45s ease, visibility 0.45s;
+}
+.ad-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+.ad-slide--sponsor {
   background: linear-gradient(120deg, #f5f7fb 0%, #faf7ff 55%, #fdfdff 100%);
-  text-align: left;
 }
-.vp-doc .ad-slot--sponsor:hover {
-  border-color: var(--vp-c-brand-1);
-  background: linear-gradient(120deg, #eef2fb 0%, #f7f1ff 55%, #ffffff 100%);
+.ad-slide--community {
+  background: linear-gradient(120deg, #f4f7ff 0%, #f6f4ff 50%, #fbfdff 100%);
 }
-.ad-slot--sponsor .ad-logo {
+.ad-slide:hover .ad-cta {
+  filter: brightness(1.08);
+}
+.ad-logo {
   display: block;
-  width: 56px;
-  height: 56px;
-  border-radius: 12px;
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
 }
-.ad-slot--sponsor .ad-body {
+/* 社区那条用的是螺旋标记（透明 SVG），不需要圆角底板 */
+.ad-slide--community .ad-logo {
+  border-radius: 0;
+}
+.ad-body {
   display: flex;
   flex-direction: column;
-  gap: 0.28rem;
+  gap: 0.3rem;
   min-width: 0;
 }
-.ad-slot--sponsor .ad-kicker {
+.ad-kicker {
   display: flex;
   align-items: center;
   gap: 0.45rem;
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 600;
   letter-spacing: 0.03em;
   color: var(--vp-c-text-3);
 }
-/* 横幅里的「广告」标识改为行内，避免绝对定位压到 logo */
-.ad-slot--sponsor .ad-slot-tag {
-  position: static;
+.ad-tag {
+  padding: 0.1rem 0.35rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 3px;
   font-size: 0.6rem;
+  letter-spacing: 0.1em;
 }
-.ad-slot--sponsor .ad-headline {
-  font-size: 1.02rem;
+.ad-headline {
+  font-size: 1.25rem;
   font-weight: 700;
-  line-height: 1.45;
+  line-height: 1.4;
   color: var(--vp-c-text-1);
 }
 /* 模型名不拆行，只在两个模型之间换行 */
-.ad-slot--sponsor .ad-headline .ad-model {
+.ad-headline .ad-model {
   white-space: nowrap;
 }
-.ad-slot--sponsor .ad-sub {
-  font-size: 0.82rem;
-  line-height: 1.6;
+.ad-sub {
+  font-size: 0.9rem;
+  line-height: 1.62;
   color: var(--vp-c-text-2);
 }
-.ad-slot--sponsor .ad-chips {
+.ad-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  margin-top: 0.15rem;
+  margin-top: 0.2rem;
 }
-.ad-slot--sponsor .ad-chips span {
-  padding: 0.12rem 0.45rem;
+.ad-chips span {
+  padding: 0.14rem 0.5rem;
   border-radius: 4px;
   background: var(--vp-c-default-soft);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   color: var(--vp-c-text-2);
 }
-.ad-slot--sponsor .ad-cta {
-  padding: 0.55rem 0.95rem;
+.ad-cta {
+  padding: 0.68rem 1.15rem;
   border-radius: 8px;
   background: var(--vp-c-brand-1);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 600;
   white-space: nowrap;
   color: #fff;
+  transition: filter 0.2s;
+}
+/* 圆点 */
+.ad-carousel-dots {
+  position: absolute;
+  right: 1.3rem;
+  bottom: 0.9rem;
+  z-index: 2;
+  display: flex;
+  gap: 0.4rem;
+}
+.ad-dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--vp-c-text-3);
+  opacity: 0.35;
+  cursor: pointer;
+  transition: width 0.25s, opacity 0.25s, background-color 0.25s;
+}
+.ad-dot:hover {
+  opacity: 0.7;
+}
+.ad-dot.is-active {
+  width: 18px;
+  border-radius: 4px;
+  background: var(--vp-c-brand-1);
+  opacity: 1;
 }
 @media (max-width: 720px) {
-  .vp-doc .ad-slot--sponsor {
+  .ad-carousel {
+    grid-template-rows: auto;
+    min-height: 0;
+  }
+  .ad-carousel-track {
+    grid-template-rows: auto;
+  }
+  .ad-slide {
     grid-template-columns: auto 1fr;
     align-items: start;
-    padding: 1.1rem 1.1rem 1.2rem;
+    gap: 0.8rem 0.9rem;
+    padding: 1.2rem 1.2rem 2.4rem;
   }
-  .ad-slot--sponsor .ad-logo {
+  .ad-logo {
     width: 44px;
     height: 44px;
     border-radius: 10px;
   }
-  .ad-slot--sponsor .ad-headline {
-    font-size: 0.95rem;
+  .ad-headline {
+    font-size: 1rem;
   }
-  .ad-slot--sponsor .ad-cta {
+  .ad-cta {
     grid-column: 1 / -1;
     text-align: center;
+  }
+  .ad-carousel-dots {
+    right: 0;
+    left: 0;
+    justify-content: center;
   }
 }
 

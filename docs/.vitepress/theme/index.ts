@@ -1,6 +1,7 @@
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import AdCarousel from './AdCarousel.vue'
 import Discuss from './Discuss.vue'
 import ResourceHeader from './ResourceHeader.vue'
 import ResourceList from './ResourceList.vue'
@@ -12,6 +13,8 @@ export default {
     // 资源详情页头部组件，可直接在 markdown 里用 <ResourceHeader />
     app.component('ResourceHeader', ResourceHeader)
     app.component('ResourceList', ResourceList)
+    // 首页顶部轮播广告位，可直接在 markdown 里用 <AdCarousel />
+    app.component('AdCarousel', AdCarousel)
   },
   Layout() {
     return h(DefaultTheme.Layout, null, {
