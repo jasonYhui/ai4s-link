@@ -5,6 +5,9 @@ import { resources, categories } from './resources'
 /** 当前选中的分类；null 表示「全部」 */
 const active = ref<string | null>(null)
 
+/** 搜索关键词；空串表示不筛选 */
+const keyword = ref('')
+
 const tabs = computed(() => [
   { key: null as string | null, label: '全部', count: resources.length },
   ...categories.map((c) => ({
@@ -14,14 +17,43 @@ const tabs = computed(() => [
   }))
 ])
 
-const visible = computed(() =>
-  active.value === null
-    ? resources
-    : resources.filter((r) => r.category === active.value)
-)
+/** 关键词在标题、定位、额度、提供方、分类里匹配，忽略大小写与首尾空格 */
+const visible = computed(() => {
+  const kw = keyword.value.trim().toLowerCase()
+  return resources.filter((r) => {
+    if (active.value !== null && r.category !== active.value) return false
+    if (!kw) return true
+    return [r.title, r.desc, r.quota, r.source, r.category, r.char]
+      .join(' ')
+      .toLowerCase()
+      .includes(kw)
+  })
+})
 </script>
 
 <template>
+  <div class="res-search">
+    <svg class="res-search-icon" viewBox="0 0 20 20" aria-hidden="true">
+      <circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6" />
+      <path d="M12.8 12.8 17 17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+    </svg>
+    <input
+      v-model="keyword"
+      type="search"
+      class="res-search-input"
+      aria-label="搜索资源"
+      placeholder="搜索资源，如「算力」「arXiv」"
+      autocomplete="off"
+    />
+    <button
+      v-if="keyword"
+      type="button"
+      class="res-search-clear"
+      aria-label="清空搜索"
+      @click="keyword = ''"
+    >×</button>
+  </div>
+
   <nav class="res-tabs" aria-label="资源分类">
     <button
       v-for="t in tabs"
@@ -37,7 +69,7 @@ const visible = computed(() =>
     </button>
   </nav>
 
-  <div class="rlist">
+  <div v-if="visible.length" class="rlist">
     <a v-for="r in visible" :key="r.slug" class="ritem" :href="`./${r.slug}`">
       <div class="rthumb" :class="r.logo ? 'rthumb--logo' : `rthumb--${r.tone}`">
         <img v-if="r.logo" :src="r.logo" :alt="r.title" loading="lazy" />
@@ -54,4 +86,8 @@ const visible = computed(() =>
       </div>
     </a>
   </div>
+
+  <p v-else class="rlist-empty">
+    没有匹配「{{ keyword.trim() }}」的资源。换个关键词，或切到「全部」再看看。
+  </p>
 </template>

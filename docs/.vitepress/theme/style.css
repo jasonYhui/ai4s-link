@@ -623,6 +623,73 @@
 /* ------------------------------------------------------------------
    资源分类导航（对标「好价推荐 / 数码 / 食品」那种横向标签）
    ------------------------------------------------------------------ */
+/* 资源库搜索框：位置在广告位之下、分类标签之上 */
+.res-search {
+  position: relative;
+  margin: 0 0 1.2rem;
+}
+.res-search-icon {
+  position: absolute;
+  top: 50%;
+  left: 0.9rem;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-50%);
+  color: var(--vp-c-text-3);
+  pointer-events: none;
+}
+.res-search-input {
+  width: 100%;
+  padding: 0.62rem 2.6rem 0.62rem 2.6rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: var(--vp-c-bg-alt);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--vp-c-text-1);
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.res-search-input::placeholder {
+  color: var(--vp-c-text-3);
+}
+.res-search-input:focus {
+  outline: none;
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-bg);
+}
+/* 搜索框自带的清除按钮（WebKit）与自定义清除按钮不要同时出现 */
+.res-search-input::-webkit-search-cancel-button {
+  appearance: none;
+}
+.res-search-clear {
+  position: absolute;
+  top: 50%;
+  right: 0.55rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  transform: translateY(-50%);
+  border: none;
+  border-radius: 50%;
+  background: none;
+  font-size: 1.15rem;
+  line-height: 1;
+  color: var(--vp-c-text-3);
+  cursor: pointer;
+  transition: color 0.2s, background-color 0.2s;
+}
+.res-search-clear:hover {
+  color: var(--vp-c-text-1);
+  background: var(--vp-c-default-soft);
+}
+.rlist-empty {
+  margin: 1.6rem 0;
+  color: var(--vp-c-text-2);
+  font-size: 0.95rem;
+}
+
 .res-tabs {
   display: flex;
   flex-wrap: wrap;
