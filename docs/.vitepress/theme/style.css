@@ -584,6 +584,108 @@
   border-color: var(--vp-c-brand-1);
   background: var(--vp-c-bg);
 }
+/* ------------------------------------------------------------------
+   赞助商横幅（.ad-slot--sponsor）：虚线占位换成真实素材后的样式
+   换广告主时只改 index.md 的内容和这里的渐变配色
+   ------------------------------------------------------------------ */
+.vp-doc .ad-slot--sponsor {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.9rem 1.1rem;
+  min-height: 0;
+  padding: 1.3rem 1.5rem;
+  border-style: solid;
+  background: linear-gradient(120deg, #f5f7fb 0%, #faf7ff 55%, #fdfdff 100%);
+  text-align: left;
+}
+.vp-doc .ad-slot--sponsor:hover {
+  border-color: var(--vp-c-brand-1);
+  background: linear-gradient(120deg, #eef2fb 0%, #f7f1ff 55%, #ffffff 100%);
+}
+.ad-slot--sponsor .ad-logo {
+  display: block;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+}
+.ad-slot--sponsor .ad-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  min-width: 0;
+}
+.ad-slot--sponsor .ad-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--vp-c-text-3);
+}
+/* 横幅里的「广告」标识改为行内，避免绝对定位压到 logo */
+.ad-slot--sponsor .ad-slot-tag {
+  position: static;
+  font-size: 0.6rem;
+}
+.ad-slot--sponsor .ad-headline {
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--vp-c-text-1);
+}
+/* 模型名不拆行，只在两个模型之间换行 */
+.ad-slot--sponsor .ad-headline .ad-model {
+  white-space: nowrap;
+}
+.ad-slot--sponsor .ad-sub {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--vp-c-text-2);
+}
+.ad-slot--sponsor .ad-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.15rem;
+}
+.ad-slot--sponsor .ad-chips span {
+  padding: 0.12rem 0.45rem;
+  border-radius: 4px;
+  background: var(--vp-c-default-soft);
+  font-size: 0.7rem;
+  color: var(--vp-c-text-2);
+}
+.ad-slot--sponsor .ad-cta {
+  padding: 0.55rem 0.95rem;
+  border-radius: 8px;
+  background: var(--vp-c-brand-1);
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #fff;
+}
+@media (max-width: 720px) {
+  .vp-doc .ad-slot--sponsor {
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    padding: 1.1rem 1.1rem 1.2rem;
+  }
+  .ad-slot--sponsor .ad-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+  }
+  .ad-slot--sponsor .ad-headline {
+    font-size: 0.95rem;
+  }
+  .ad-slot--sponsor .ad-cta {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+}
+
 .ad-slot-tag {
   position: absolute;
   left: 0.6rem;

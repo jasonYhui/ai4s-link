@@ -5,10 +5,20 @@ aside: false
 discuss: false
 ---
 
-<a class="ad-slot" href="https://github.com/jasonYhui/ai4s-link/discussions" target="_blank" rel="noopener">
-  <span class="ad-slot-tag">广告</span>
-  <span class="ad-slot-title">这里留给一位赞助商</span>
-  <span class="ad-slot-sub">建议尺寸 1020 × 220 · 想投放请到交叉论坛留言</span>
+<!-- 赞助商横幅：换广告主时改这里的内容 + style.css 里的 .ad-slot--sponsor 配色 -->
+<a class="ad-slot ad-slot--sponsor" href="/resources/zhipu-free-models">
+  <img class="ad-logo" src="/logos/zhipu.png" alt="智谱 AI" width="56" height="56" loading="lazy" />
+  <span class="ad-body">
+    <span class="ad-kicker"><span class="ad-slot-tag">广告</span>智谱 AI · 开放平台</span>
+    <span class="ad-headline"><span class="ad-model">GLM-4.7-Flash</span> 与 <span class="ad-model">GLM-4.6V-Flash</span>，输入 / 输出 / 缓存全免费</span>
+    <span class="ad-sub">200K 上下文能把整篇论文塞进去读，OpenAI 兼容格式、改个模型名就能跑。</span>
+    <span class="ad-chips">
+      <span>200K 上下文</span>
+      <span>视觉理解可选</span>
+      <span>OpenAI 兼容</span>
+    </span>
+  </span>
+  <span class="ad-cta">查看免费额度 →</span>
 </a>
 
 <ResourceList />
