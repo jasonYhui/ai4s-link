@@ -594,6 +594,9 @@
   position: relative;
   display: grid;
   grid-template-rows: 1fr;
+  /* 高度跟随 3:1 的设计稿比例（宽 1016 时约 339px）：
+     4.2:1 的槽位装 3:1 的图必然裁掉上下留白，这里让槽位迁就图 */
+  aspect-ratio: 3 / 1;
   min-height: 242px;
   margin: 0 0 2.2rem;
   border: 1px solid var(--vp-c-divider);
@@ -774,10 +777,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* 设计稿内容（两行标题 + 胶囊）中心在图片约 55.7% 高度处；
-     槽位 4.2:1 装 3:1 的图，纵向必然裁掉约 28%，
-     这里把裁切窗口对齐到内容，让它仍然居中 */
-  object-position: center 70%;
+  /* 槽位与图同为 3:1，cover 等同于等比铺满，不再裁切 */
+  object-position: center center;
+  /* 原图自带透明圆角，与容器的圆角错开 1px 会露出白边/暗角，这里按容器圆角裁齐 */
+  border-radius: 12px;
 }
 /* 有原图时，宽屏不再显示 HTML 版式与装饰（左竖条 / 水印都已在图里） */
 .has-banner .ad-statement,
@@ -848,6 +851,7 @@
 @media (max-width: 720px) {
   .ad-carousel {
     grid-template-rows: auto;
+    aspect-ratio: auto;
     min-height: 0;
   }
   .ad-carousel-track {
