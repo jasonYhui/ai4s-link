@@ -31,9 +31,8 @@ export default defineConfig({
     // 宽高按图片实际比例（476:92）给出，避免首屏占位跳动；实际显示高度由 style.css 控制
     logo: { src: '/logo-full.png', alt: '科学涌现', width: 101, height: 19.5 },
     siteTitle: false,
-    // 导航只留三项、靠右显示（精选资源改由资源库页面内链，见 resources/index.md）
+    // 导航只留「论坛」「招聘」、靠右显示：首页本身就是资源库，回资源库点左上角 logo
     nav: [
-      { text: '资源', link: '/' },
       {
         text: '论坛',
         link: 'https://github.com/jasonYhui/ai4s-link/discussions',
