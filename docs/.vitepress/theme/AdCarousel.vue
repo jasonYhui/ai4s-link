@@ -9,17 +9,19 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
  * （style.css 里是 242px，即原 161px 的 1.5 倍）。
  */
 interface Slide {
+  /** 'card'：logo + 文案 + 按钮；'statement'：居中大标题 + 胶囊（无 logo/按钮） */
+  layout?: 'card' | 'statement'
   /** 左上角标签，赞助内容写「广告」，自有内容写「关于我们」 */
-  tag: string
-  theme: 'sponsor' | 'community'
-  logo: string
-  logoAlt: string
-  kicker: string
+  tag?: string
+  theme: 'sponsor' | 'community' | 'intro'
+  logo?: string
+  logoAlt?: string
+  kicker?: string
   /** 允许内联标记，例如用 <span class="ad-model"> 防止模型名被拆行 */
   headline: string
-  sub: string
-  chips: string[]
-  cta: string
+  sub?: string
+  chips?: string[]
+  cta?: string
   href: string
   /** 站外链接加 target="_blank" */
   external?: boolean
@@ -27,15 +29,11 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    tag: '关于我们',
-    theme: 'community',
-    logo: '/favicon.svg',
-    logoAlt: '',
-    kicker: '科学涌现社区',
-    headline: '免费资源、跨学科同行、AI 工具，让做出成果这件事少一点门槛',
-    sub: '我们把核实过的免费科研资源整理成库，把不同学科的研究者凑到一起，用 AI 压掉重复劳动。',
-    chips: ['免费资源', '跨学科交流', 'AI 赋能', '逐条核实'],
-    cta: '加入社区',
+    layout: 'statement',
+    theme: 'intro',
+    headline:
+      '科学涌现聚焦 AI4S 交叉学科，汇聚免费科研资源供研究人员便捷取用，并为交叉学科研究者搭建交流平台，推动科学突破。',
+    chips: ['免费资源', '跨学科交流', 'AI 赋能', '开放共享'],
     href: 'https://github.com/jasonYhui/ai4s-link/discussions',
     external: true
   },
@@ -83,7 +81,7 @@ onBeforeUnmount(() => {
     class="ad-carousel"
     role="region"
     aria-roledescription="轮播"
-    :aria-label="`广告轮播，第 ${index + 1} 张，共 ${slides.length} 张：${current.kicker}`"
+    :aria-label="`广告轮播，第 ${index + 1} 张，共 ${slides.length} 张：${current.kicker || current.headline}`"
     @mouseenter="paused = true"
     @mouseleave="paused = false"
     @focusin="paused = true"
@@ -94,23 +92,34 @@ onBeforeUnmount(() => {
         v-for="(s, i) in slides"
         :key="s.kicker"
         class="ad-slide"
-        :class="[`ad-slide--${s.theme}`, { 'is-active': i === index }]"
+        :class="[`ad-slide--${s.theme}`, `ad-slide--${s.layout || 'card'}`, { 'is-active': i === index }]"
         :href="s.href"
         :target="s.external ? '_blank' : undefined"
         :rel="s.external ? 'noopener noreferrer' : undefined"
         :tabindex="i === index ? 0 : -1"
         :aria-hidden="i !== index"
       >
-        <img class="ad-logo" :src="s.logo" :alt="s.logoAlt" width="64" height="64" loading="lazy" />
-        <span class="ad-body">
-          <span class="ad-kicker"><span class="ad-tag">{{ s.tag }}</span>{{ s.kicker }}</span>
-          <span class="ad-headline" v-html="s.headline"></span>
-          <span class="ad-sub">{{ s.sub }}</span>
-          <span class="ad-chips">
-            <span v-for="c in s.chips" :key="c">{{ c }}</span>
+        <template v-if="s.layout === 'statement'">
+          <img class="ad-watermark" src="/favicon.svg" alt="" aria-hidden="true" loading="lazy" />
+          <span class="ad-statement">
+            <span class="ad-statement-text" v-html="s.headline"></span>
+            <span class="ad-chips ad-chips--pills">
+              <span v-for="(c, ci) in s.chips" :key="c" :class="`ad-pill ad-pill--${ci + 1}`">{{ c }}</span>
+            </span>
           </span>
-        </span>
-        <span class="ad-cta">{{ s.cta }} →</span>
+        </template>
+        <template v-else>
+          <img class="ad-logo" :src="s.logo" :alt="s.logoAlt" width="64" height="64" loading="lazy" />
+          <span class="ad-body">
+            <span class="ad-kicker"><span class="ad-tag">{{ s.tag }}</span>{{ s.kicker }}</span>
+            <span class="ad-headline" v-html="s.headline"></span>
+            <span class="ad-sub">{{ s.sub }}</span>
+            <span class="ad-chips">
+              <span v-for="c in s.chips" :key="c">{{ c }}</span>
+            </span>
+          </span>
+          <span class="ad-cta">{{ s.cta }} →</span>
+        </template>
       </a>
     </div>
 

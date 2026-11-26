@@ -731,6 +731,96 @@
   background: var(--vp-c-brand-1);
   opacity: 1;
 }
+/* ------------------------------------------------------------------
+   轮播 · 社区介绍版式（.ad-slide--statement）
+   按设计稿复刻：浅底 + 左竖条渐变 + 右侧螺旋水印 + 居中两行主张 + 四个胶囊
+   文字用 HTML 而不是整张图，手机上才能换行、字号也不会被压到看不清
+   ------------------------------------------------------------------ */
+.ad-slide--intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(120% 130% at 18% 0%, #fbfdff 0%, #f4f7fc 46%, #eef2fa 100%);
+  overflow: hidden;
+}
+/* 左竖条：青 → 蓝 → 紫 */
+.ad-slide--intro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 5px;
+  background: linear-gradient(
+    180deg,
+    #1d9e79 0%,
+    #23998f 12%,
+    #2f8fc3 38%,
+    #3789dd 55%,
+    #5b81dd 78%,
+    #7a79dd 100%
+  );
+}
+/* 右侧螺旋水印：复用站点的矢量标记
+   注意：不能用 CSS background 引用这个 SVG——它只有 viewBox、没有 width/height，
+   Chrome 会把它算成 0 尺寸。用 <img> 才能正确渲染。 */
+.ad-watermark {
+  position: absolute;
+  top: 50%;
+  right: -110px;
+  width: 460px;
+  height: 460px;
+  transform: translateY(-50%);
+  opacity: 0.09;
+  pointer-events: none;
+}
+.ad-statement {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  max-width: 860px;
+  padding: 0.4rem 1.2rem;
+  text-align: center;
+}
+.ad-statement-text {
+  font-size: 1.28rem;
+  font-weight: 600;
+  line-height: 1.55;
+  color: #113b6d;
+}
+/* 四个胶囊：描边 + 极浅底，依次绿 / 蓝 / 紫 / 灰 */
+.ad-chips--pills {
+  gap: 0.55rem;
+}
+.ad-pill {
+  padding: 0.3rem 0.95rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.79rem;
+  font-weight: 500;
+  color: #113b6d;
+}
+.ad-pill--1 {
+  background: #e4f5eb;
+  border-color: #b3ddc6;
+}
+.ad-pill--2 {
+  background: #e3eeff;
+  border-color: #b9d2f4;
+}
+.ad-pill--3 {
+  background: #ece7ff;
+  border-color: #cfc2f2;
+}
+.ad-pill--4 {
+  background: #ecf1f7;
+  border-color: #c9d5e4;
+}
+
 @media (max-width: 720px) {
   .ad-carousel {
     grid-template-rows: auto;
@@ -761,6 +851,27 @@
     right: 0;
     left: 0;
     justify-content: center;
+  }
+  .ad-slide--intro {
+    align-items: center;
+  }
+  .ad-watermark {
+    right: -120px;
+    width: 260px;
+    height: 260px;
+    opacity: 0.1;
+  }
+  .ad-statement {
+    gap: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+  .ad-statement-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .ad-pill {
+    padding: 0.24rem 0.7rem;
+    font-size: 0.74rem;
   }
 }
 
