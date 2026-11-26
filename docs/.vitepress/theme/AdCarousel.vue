@@ -22,7 +22,8 @@ interface Slide {
   sub?: string
   chips?: string[]
   cta?: string
-  href: string
+  /** 不填则这一帧只做展示、不可点击 */
+  href?: string
   /** 站外链接加 target="_blank" */
   external?: boolean
 }
@@ -33,9 +34,7 @@ const slides: Slide[] = [
     theme: 'intro',
     headline:
       '科学涌现聚焦 AI4S 交叉学科，汇聚免费科研资源供研究人员便捷取用，并为交叉学科研究者搭建交流平台，推动科学突破。',
-    chips: ['免费资源', '跨学科交流', 'AI 赋能', '开放共享'],
-    href: 'https://github.com/jasonYhui/ai4s-link/discussions',
-    external: true
+    chips: ['免费资源', '跨学科交流', 'AI 赋能', '开放共享']
   },
   {
     tag: '广告',
@@ -88,15 +87,16 @@ onBeforeUnmount(() => {
     @focusout="paused = false"
   >
     <div class="ad-carousel-track">
-      <a
+      <component
+        :is="s.href ? 'a' : 'div'"
         v-for="(s, i) in slides"
         :key="s.kicker"
         class="ad-slide"
-        :class="[`ad-slide--${s.theme}`, `ad-slide--${s.layout || 'card'}`, { 'is-active': i === index }]"
-        :href="s.href"
-        :target="s.external ? '_blank' : undefined"
-        :rel="s.external ? 'noopener noreferrer' : undefined"
-        :tabindex="i === index ? 0 : -1"
+        :class="[`ad-slide--${s.theme}`, `ad-slide--${s.layout || 'card'}`, { 'is-active': i === index, 'is-static': !s.href }]"
+        :href="s.href || undefined"
+        :target="s.href && s.external ? '_blank' : undefined"
+        :rel="s.href && s.external ? 'noopener noreferrer' : undefined"
+        :tabindex="s.href && i === index ? 0 : undefined"
         :aria-hidden="i !== index"
       >
         <template v-if="s.layout === 'statement'">
@@ -120,7 +120,7 @@ onBeforeUnmount(() => {
           </span>
           <span class="ad-cta">{{ s.cta }} →</span>
         </template>
-      </a>
+      </component>
     </div>
 
     <div class="ad-carousel-dots" role="tablist" aria-label="切换广告">
