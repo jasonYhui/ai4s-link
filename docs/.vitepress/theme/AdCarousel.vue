@@ -21,6 +21,8 @@ interface Slide {
   headline: string
   sub?: string
   chips?: string[]
+  /** 设计稿整图路径；有它时宽屏直接显示原图，窄屏仍用 HTML 版式 */
+  banner?: string
   cta?: string
   /** 不填则这一帧只做展示、不可点击 */
   href?: string
@@ -34,7 +36,8 @@ const slides: Slide[] = [
     theme: 'intro',
     headline:
       '科学涌现聚焦 AI4S 交叉学科，汇聚免费科研资源供研究人员便捷取用，并为交叉学科研究者搭建交流平台，推动科学突破。',
-    chips: ['免费资源', '跨学科交流', 'AI 赋能', '开放共享']
+    chips: ['免费资源', '跨学科交流', 'AI 赋能', '开放共享'],
+    banner: '/carousel-community.webp'
   },
   {
     tag: '广告',
@@ -92,7 +95,7 @@ onBeforeUnmount(() => {
         v-for="(s, i) in slides"
         :key="s.kicker"
         class="ad-slide"
-        :class="[`ad-slide--${s.theme}`, `ad-slide--${s.layout || 'card'}`, { 'is-active': i === index, 'is-static': !s.href }]"
+        :class="[`ad-slide--${s.theme}`, `ad-slide--${s.layout || 'card'}`, { 'is-active': i === index, 'is-static': !s.href, 'has-banner': !!s.banner }]"
         :href="s.href || undefined"
         :target="s.href && s.external ? '_blank' : undefined"
         :rel="s.href && s.external ? 'noopener noreferrer' : undefined"
@@ -100,6 +103,12 @@ onBeforeUnmount(() => {
         :aria-hidden="i !== index"
       >
         <template v-if="s.layout === 'statement'">
+          <img
+            v-if="s.banner"
+            class="ad-banner"
+            :src="s.banner"
+            alt="科学涌现聚焦 AI4S 交叉学科，汇聚免费科研资源供研究人员便捷取用，并为交叉学科研究者搭建交流平台，推动科学突破。"
+          />
           <img class="ad-watermark" src="/favicon.svg" alt="" aria-hidden="true" loading="lazy" />
           <span class="ad-statement">
             <span class="ad-statement-text" v-html="s.headline"></span>

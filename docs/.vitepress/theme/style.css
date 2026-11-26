@@ -766,6 +766,26 @@
     #7a79dd 100%
   );
 }
+/* 设计稿原图：宽屏直接用原图铺满，保证和设计稿一致 */
+.ad-banner {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* 设计稿内容（两行标题 + 胶囊）中心在图片约 55.7% 高度处；
+     槽位 4.2:1 装 3:1 的图，纵向必然裁掉约 28%，
+     这里把裁切窗口对齐到内容，让它仍然居中 */
+  object-position: center 70%;
+}
+/* 有原图时，宽屏不再显示 HTML 版式与装饰（左竖条 / 水印都已在图里） */
+.has-banner .ad-statement,
+.has-banner .ad-watermark,
+.has-banner.ad-slide--intro::before {
+  display: none;
+}
+
 /* 右侧螺旋水印：复用站点的矢量标记
    注意：不能用 CSS background 引用这个 SVG——它只有 viewBox、没有 width/height，
    Chrome 会把它算成 0 尺寸。用 <img> 才能正确渲染。 */
@@ -858,6 +878,19 @@
   }
   .ad-slide--intro {
     align-items: center;
+  }
+  /* 手机上原图会缩到 390×130、字只有 7px 左右，改用 HTML 版式 */
+  .has-banner .ad-banner {
+    display: none;
+  }
+  .has-banner .ad-statement {
+    display: flex;
+  }
+  .has-banner .ad-watermark {
+    display: block;
+  }
+  .has-banner.ad-slide--intro::before {
+    display: block;
   }
   .ad-watermark {
     right: -120px;
